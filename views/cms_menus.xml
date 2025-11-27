@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem 
+        id="menu_jasper_cms_root"
+        name="Jasper CMS"
+        web_icon="jasper_cms,static/description/icon.png"
+        sequence="50"/>
+
+    <!-- Submenu: Content -->
+    <menuitem 
+        id="menu_jasper_cms_content"
+        name="Content"
+        parent="menu_jasper_cms_root"
+        sequence="10"/>
+
+    <menuitem 
+        id="menu_jasper_cms_sections"
+        name="Sections"
+        parent="menu_jasper_cms_content"
+        action="action_cms_section"
+        sequence="10"/>
+
+    <menuitem 
+        id="menu_jasper_cms_section_contents"
+        name="Section Contents"
+        parent="menu_jasper_cms_content"
+        action="action_cms_section_content"
+        sequence="20"/>
+
+    <!-- Submenu: Products -->
+    <menuitem 
+        id="menu_jasper_cms_products"
+        name="Products"
+        parent="menu_jasper_cms_root"
+        sequence="20"/>
+
+    <menuitem 
+        id="menu_jasper_cms_product_grids"
+        name="Product Grids"
+        parent="menu_jasper_cms_products"
+        action="action_cms_product_grid"
+        sequence="10"/>
+
+    <!-- Submenu: Configuration -->
+    <menuitem 
+        id="menu_jasper_cms_config"
+        name="Configuration"
+        parent="menu_jasper_cms_root"
+        sequence="90"/>
+
+    <menuitem 
+        id="menu_jasper_cms_meta"
+        name="Meta Tags (SEO)"
+        parent="menu_jasper_cms_config"
+        action="action_cms_meta"
+        sequence="10"/>
+</odoo>

@@ -1,0 +1,11 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_cms_meta_user,jasper.cms.meta.user,model_jasper_cms_meta,base.group_user,1,0,0,0
+access_cms_meta_manager,jasper.cms.meta.manager,model_jasper_cms_meta,base.group_system,1,1,1,1
+access_cms_section_user,jasper.cms.section.user,model_jasper_cms_section,base.group_user,1,0,0,0
+access_cms_section_manager,jasper.cms.section.manager,model_jasper_cms_section,base.group_system,1,1,1,1
+access_cms_section_content_user,jasper.cms.section.content.user,model_jasper_cms_section_content,base.group_user,1,0,0,0
+access_cms_section_content_manager,jasper.cms.section.content.manager,model_jasper_cms_section_content,base.group_system,1,1,1,1
+access_cms_product_grid_user,jasper.cms.product.grid.user,model_jasper_cms_product_grid,base.group_user,1,0,0,0
+access_cms_product_grid_manager,jasper.cms.product.grid.manager,model_jasper_cms_product_grid,base.group_system,1,1,1,1
+access_cms_product_grid_item_user,jasper.cms.product.grid.item.user,model_jasper_cms_product_grid_item,base.group_user,1,0,0,0
+access_cms_product_grid_item_manager,jasper.cms.product.grid.item.manager,model_jasper_cms_product_grid_item,base.group_system,1,1,1,1

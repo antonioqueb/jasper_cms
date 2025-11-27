@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Tree View -->
+    <record id="view_cms_meta_list" model="ir.ui.view">
+        <field name="name">jasper.cms.meta.list</field>
+        <field name="model">jasper.cms.meta</field>
+        <field name="arch" type="xml">
+            <list string="Meta Tags" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="page_url"/>
+                <field name="meta_title"/>
+                <field name="meta_description"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Form View -->
+    <record id="view_cms_meta_form" model="ir.ui.view">
+        <field name="name">jasper.cms.meta.form</field>
+        <field name="model">jasper.cms.meta</field>
+        <field name="arch" type="xml">
+            <form string="Meta Tags">
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group string="Page Information">
+                            <field name="name"/>
+                            <field name="page_url"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="SEO Meta Tags">
+                            <field name="meta_title"/>
+                            <field name="meta_keywords"/>
+                        </group>
+                    </group>
+                    <group>
+                        <field name="meta_description"/>
+                    </group>
+                    <group string="Social Media">
+                        <field name="meta_image" widget="image"/>
+                        <field name="meta_image_filename" invisible="1"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_cms_meta" model="ir.actions.act_window">
+        <field name="name">Meta Tags</field>
+        <field name="res_model">jasper.cms.meta</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first meta tag configuration
+            </p>
+            <p>
+                Meta tags are used for SEO and social media sharing.
+            </p>
+        </field>
+    </record>
+</odoo>

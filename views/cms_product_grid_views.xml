@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- ===================== GRID ITEMS ===================== -->
+    
+    <!-- Grid Item Tree View -->
+    <record id="view_cms_product_grid_item_list" model="ir.ui.view">
+        <field name="name">jasper.cms.product.grid.item.list</field>
+        <field name="model">jasper.cms.product.grid.item</field>
+        <field name="arch" type="xml">
+            <list string="Grid Items" editable="bottom">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="product_id"/>
+                <field name="manual_name" column_invisible="product_id"/>
+                <field name="manual_price" column_invisible="product_id"/>
+                <field name="manual_currency"/>
+                <field name="manual_category" column_invisible="product_id"/>
+                <field name="is_new"/>
+                <field name="is_featured"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Grid Item Form View -->
+    <record id="view_cms_product_grid_item_form" model="ir.ui.view">
+        <field name="name">jasper.cms.product.grid.item.form</field>
+        <field name="model">jasper.cms.product.grid.item</field>
+        <field name="arch" type="xml">
+            <form string="Grid Item">
+                <sheet>
+                    <group>
+                        <group string="Link to Product">
+                            <field name="product_id"/>
+                            <field name="grid_id"/>
+                            <field name="sequence"/>
+                        </group>
+                        <group string="Flags">
+                            <field name="is_new"/>
+                            <field name="is_featured"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <group string="Manual Data (if no product linked)" invisible="product_id">
+                        <group>
+                            <field name="manual_name"/>
+                            <field name="manual_slug"/>
+                            <field name="manual_price"/>
+                            <field name="manual_currency"/>
+                            <field name="manual_category"/>
+                        </group>
+                        <group>
+                            <field name="manual_image" widget="image"/>
+                            <field name="manual_image_src" placeholder="/products/obsidian.png"/>
+                        </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- ===================== PRODUCT GRID ===================== -->
+    
+    <!-- Grid Tree View -->
+    <record id="view_cms_product_grid_list" model="ir.ui.view">
+        <field name="name">jasper.cms.product.grid.list</field>
+        <field name="model">jasper.cms.product.grid</field>
+        <field name="arch" type="xml">
+            <list string="Product Grids">
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="title"/>
+                <field name="page_id"/>
+                <field name="max_items"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Grid Form View -->
+    <record id="view_cms_product_grid_form" model="ir.ui.view">
+        <field name="name">jasper.cms.product.grid.form</field>
+        <field name="model">jasper.cms.product.grid</field>
+        <field name="arch" type="xml">
+            <form string="Product Grid">
+                <sheet>
+                    <div class="oe_button_box" name="button_box"/>
+                    <widget name="web_ribbon" title="Archived" bg_color="text-bg-danger" invisible="active"/>
+                    <group>
+                        <group string="Grid Info">
+                            <field name="name"/>
+                            <field name="title" placeholder="Latest Treasures"/>
+                            <field name="sequence"/>
+                            <field name="active"/>
+                        </group>
+                        <group string="Configuration">
+                            <field name="page_id"/>
+                            <field name="max_items"/>
+                            <field name="show_new_badge"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Grid Items" name="items">
+                            <field name="item_ids">
+                                <list editable="bottom">
+                                    <field name="sequence" widget="handle"/>
+                                    <field name="product_id"/>
+                                    <field name="manual_name" placeholder="Product Name" column_invisible="product_id"/>
+                                    <field name="manual_price" column_invisible="product_id"/>
+                                    <field name="manual_currency"/>
+                                    <field name="manual_image_src" placeholder="/products/image.png"/>
+                                    <field name="manual_category" placeholder="Category"/>
+                                    <field name="is_new"/>
+                                    <field name="is_featured"/>
+                                    <field name="active"/>
+                                </list>
+                            </field>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Grid Action -->
+    <record id="action_cms_product_grid" model="ir.actions.act_window">
+        <field name="name">Product Grids</field>
+        <field name="res_model">jasper.cms.product.grid</field>
+        <field name="view_mode">list,form</field>
+        <field name="context">{'search_default_active': True}</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Create your first product grid
+            </p>
+            <p>
+                Product grids display collections of products on your website.
+            </p>
+        </field>
+    </record>
+</odoo>

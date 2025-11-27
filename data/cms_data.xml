@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <!-- Meta Tag: Home -->
+        <record id="meta_home" model="jasper.cms.meta">
+            <field name="name">Home Page</field>
+            <field name="page_url">/</field>
+            <field name="meta_title">Home - Jasper</field>
+            <field name="meta_description">Luxury stones and crystals. Unique pieces from nature that tell ancient stories.</field>
+            <field name="sequence">1</field>
+        </record>
+
+        <!-- Section Content: Hero -->
+        <record id="content_hero_01" model="jasper.cms.section.content">
+            <field name="name">Hero - Landscape Jasper</field>
+            <field name="background_text">JASPER</field>
+            <field name="badge_text">New Arrival</field>
+            <field name="badge_icon">star</field>
+            <field name="subtitle">The November Edit</field>
+            <field name="title_normal">Polished</field>
+            <field name="title_highlight">Landscape Jasper.</field>
+            <field name="description">Sculpture of polished Landscape Jasper, known for its natural patterns that resemble mountain landscapes and desert scenes.</field>
+            <field name="cta_text">Shop Now</field>
+            <field name="cta_sub_text">Limited Availability</field>
+            <field name="cta_href">/product/prod-5</field>
+            <field name="image_src">/producto5.png</field>
+            <field name="image_alt">Polished Landscape Jasper</field>
+        </record>
+
+        <!-- Section: Hero -->
+        <record id="section_hero_01" model="jasper.cms.section">
+            <field name="name">Hero - Landscape Jasper</field>
+            <field name="section_id">hero-section-01</field>
+            <field name="section_type">hero</field>
+            <field name="layout">image_left</field>
+            <field name="content_id" ref="content_hero_01"/>
+            <field name="page_id" ref="meta_home"/>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Section Content: Feature -->
+        <record id="content_feature_01" model="jasper.cms.section.content">
+            <field name="name">Feature - Unique Crystals</field>
+            <field name="subtitle">Featured Collection</field>
+            <field name="title_normal">Unique</field>
+            <field name="title_highlight">Crystals</field>
+            <field name="description">Each piece is a natural masterpiece, formed over millions of years deep within the Earth.</field>
+            <field name="cta_text">Explore Collection</field>
+            <field name="cta_href">/collections/crystal</field>
+            <field name="image_src">/producto4.png</field>
+            <field name="image_alt">Unique Crystal Collection</field>
+        </record>
+
+        <!-- Section: Feature -->
+        <record id="section_feature_01" model="jasper.cms.section">
+            <field name="name">Feature - Unique Crystals</field>
+            <field name="section_id">feature-section-01</field>
+            <field name="section_type">feature</field>
+            <field name="layout">image_right</field>
+            <field name="content_id" ref="content_feature_01"/>
+            <field name="page_id" ref="meta_home"/>
+            <field name="sequence">20</field>
+        </record>
+
+        <!-- Section Content: Brand Story -->
+        <record id="content_brand_01" model="jasper.cms.section.content">
+            <field name="name">Brand - Our Philosophy</field>
+            <field name="subtitle">Our Philosophy</field>
+            <field name="title_normal">Unearthing</field>
+            <field name="title_highlight">The Extraordinary.</field>
+            <field name="description">One of a Kind unveils unique masterpieces of nature. We source the most exceptional minerals, gems, and fossils from around the world.</field>
+            <field name="cta_text">Read our story</field>
+            <field name="cta_href">/the-brand</field>
+            <field name="image_src">/producto3.png</field>
+            <field name="image_alt">The Brand Philosophy</field>
+            <field name="show_badge">True</field>
+        </record>
+
+        <!-- Section: Brand Story -->
+        <record id="section_brand_01" model="jasper.cms.section">
+            <field name="name">Brand - Our Philosophy</field>
+            <field name="section_id">brand-section-01</field>
+            <field name="section_type">brand_story</field>
+            <field name="layout">image_left</field>
+            <field name="content_id" ref="content_brand_01"/>
+            <field name="page_id" ref="meta_home"/>
+            <field name="sequence">30</field>
+        </record>
+
+        <!-- Product Grid: Latest Treasures -->
+        <record id="product_grid_latest" model="jasper.cms.product.grid">
+            <field name="name">Latest Treasures Grid</field>
+            <field name="title">Latest Treasures</field>
+            <field name="page_id" ref="meta_home"/>
+            <field name="max_items">8</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <!-- Grid Items -->
+        <record id="grid_item_obsidian" model="jasper.cms.product.grid.item">
+            <field name="grid_id" ref="product_grid_latest"/>
+            <field name="manual_name">Obsidian Cube</field>
+            <field name="manual_slug">obsidian-cube</field>
+            <field name="manual_price">120.00</field>
+            <field name="manual_currency">USD</field>
+            <field name="manual_image_src">/products/obsidian.png</field>
+            <field name="manual_category">Sculpture</field>
+            <field name="is_new">True</field>
+            <field name="sequence">10</field>
+        </record>
+
+        <record id="grid_item_quartz" model="jasper.cms.product.grid.item">
+            <field name="grid_id" ref="product_grid_latest"/>
+            <field name="manual_name">Quartz Point</field>
+            <field name="manual_slug">quartz-point</field>
+            <field name="manual_price">85.00</field>
+            <field name="manual_currency">USD</field>
+            <field name="manual_image_src">/products/quartz.png</field>
+            <field name="manual_category">Crystal</field>
+            <field name="is_new">False</field>
+            <field name="sequence">20</field>
+        </record>
+    </data>
+</odoo>
