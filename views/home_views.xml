@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Form View -->
+    <record id="view_jasper_home_form" model="ir.ui.view">
+        <field name="name">jasper.home.form</field>
+        <field name="model">jasper.home</field>
+        <field name="arch" type="xml">
+            <form string="Home Page Configuration" create="0" delete="0">
+                <header>
+                    <!-- No buttons needed, auto-save handles it -->
+                </header>
+                <sheet>
+                    <div class="oe_title">
+                        <h1>Home Page Manager</h1>
+                    </div>
+                    <notebook>
+                        <!-- TAB: SEO -->
+                        <page string="SEO &amp; Meta" name="seo">
+                            <group>
+                                <group>
+                                    <field name="meta_title"/>
+                                    <field name="meta_keywords"/>
+                                </group>
+                                <group>
+                                    <field name="meta_description"/>
+                                    <field name="meta_image" widget="image" options="{'size': [100, 100]}"/>
+                                    <field name="meta_image_filename" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <!-- TAB: HERO SECTION -->
+                        <page string="1. Hero Section" name="hero">
+                            <group>
+                                <group string="Layout &amp; Styling">
+                                    <field name="hero_layout"/>
+                                    <field name="hero_bg_text"/>
+                                    <label for="hero_badge_text" string="Badge"/>
+                                    <div class="o_row">
+                                        <field name="hero_badge_text"/>
+                                        <field name="hero_badge_icon"/>
+                                    </div>
+                                </group>
+                                <group string="Text Content">
+                                    <field name="hero_subtitle"/>
+                                    <field name="hero_title_normal"/>
+                                    <field name="hero_title_highlight"/>
+                                    <field name="hero_description"/>
+                                </group>
+                                <group string="Call to Action">
+                                    <field name="hero_cta_text"/>
+                                    <field name="hero_cta_sub_text"/>
+                                    <field name="hero_cta_href"/>
+                                </group>
+                                <group string="Visuals">
+                                    <field name="hero_image" widget="image"/>
+                                    <field name="hero_image_src" placeholder="/img/hero.jpg"/>
+                                    <field name="hero_image_alt"/>
+                                    <field name="hero_image_filename" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <!-- TAB: FEATURE SECTION -->
+                        <page string="2. Feature Section" name="feature">
+                            <group>
+                                <group string="Layout">
+                                    <field name="feat_layout"/>
+                                </group>
+                                <group string="Content">
+                                    <field name="feat_subtitle"/>
+                                    <field name="feat_title_normal"/>
+                                    <field name="feat_title_highlight"/>
+                                    <field name="feat_description"/>
+                                </group>
+                                <group string="CTA">
+                                    <field name="feat_cta_text"/>
+                                    <field name="feat_cta_href"/>
+                                </group>
+                                <group string="Visuals">
+                                    <field name="feat_image" widget="image"/>
+                                    <field name="feat_image_src" placeholder="/img/feat.jpg"/>
+                                    <field name="feat_image_alt"/>
+                                    <field name="feat_image_filename" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+
+                        <!-- TAB: BRAND STORY -->
+                        <page string="3. Brand Story" name="brand">
+                            <group>
+                                <group string="Layout">
+                                    <field name="brand_layout"/>
+                                    <field name="brand_show_badge"/>
+                                </group>
+                                <group string="Content">
+                                    <field name="brand_subtitle"/>
+                                    <field name="brand_title_normal"/>
+                                    <field name="brand_title_highlight"/>
+                                    <field name="brand_description"/>
+                                </group>
+                                <group string="CTA">
+                                    <field name="brand_cta_text"/>
+                                    <field name="brand_cta_href"/>
+                                </group>
+                                <group string="Visuals">
+                                    <field name="brand_image" widget="image"/>
+                                    <field name="brand_image_src" placeholder="/img/brand.jpg"/>
+                                    <field name="brand_image_alt"/>
+                                    <field name="brand_image_filename" invisible="1"/>
+                                </group>
+                            </group>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- List View (Simplified) -->
+    <record id="view_jasper_home_tree" model="ir.ui.view">
+        <field name="name">jasper.home.list</field>
+        <field name="model">jasper.home</field>
+        <field name="arch" type="xml">
+            <list string="Home Configuration" create="0" delete="0">
+                <field name="name_ui"/>
+                <field name="meta_title"/>
+                <field name="write_date"/>
+            </list>
+        </field>
+    </record>
+
+    <!-- Action -->
+    <record id="action_jasper_home" model="ir.actions.act_window">
+        <field name="name">Home Configuration</field>
+        <field name="res_model">jasper.home</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Configure your Home Page
+            </p>
+        </field>
+    </record>
+</odoo>

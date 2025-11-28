@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="1">
+        <record id="home_config_main" model="jasper.home">
+            <!-- SEO -->
+            <field name="meta_title">Home - Jasper</field>
+            <field name="meta_description">Luxury stones and crystals. Unique pieces from nature that tell ancient stories.</field>
+
+            <!-- HERO -->
+            <field name="hero_layout">image_left</field>
+            <field name="hero_bg_text">JASPER</field>
+            <field name="hero_badge_text">New Arrival</field>
+            <field name="hero_badge_icon">star</field>
+            <field name="hero_subtitle">The November Edit</field>
+            <field name="hero_title_normal">Polished</field>
+            <field name="hero_title_highlight">Landscape Jasper.</field>
+            <field name="hero_description">Sculpture of polished Landscape Jasper, known for its natural patterns that resemble mountain landscapes and desert scenes.</field>
+            <field name="hero_cta_text">Shop Now</field>
+            <field name="hero_cta_sub_text">Limited Availability</field>
+            <field name="hero_cta_href">/product/prod-5</field>
+            <field name="hero_image_src">/producto5.png</field>
+            <field name="hero_image_alt">Polished Landscape Jasper</field>
+
+            <!-- FEATURE -->
+            <field name="feat_layout">image_right</field>
+            <field name="feat_subtitle">Featured Collection</field>
+            <field name="feat_title_normal">Unique</field>
+            <field name="feat_title_highlight">Crystals</field>
+            <field name="feat_description">Each piece is a natural masterpiece, formed over millions of years deep within the Earth.</field>
+            <field name="feat_cta_text">Explore Collection</field>
+            <field name="feat_cta_href">/collections/crystal</field>
+            <field name="feat_image_src">/producto4.png</field>
+            <field name="feat_image_alt">Unique Crystal Collection</field>
+
+            <!-- BRAND STORY -->
+            <field name="brand_layout">image_left</field>
+            <field name="brand_subtitle">Our Philosophy</field>
+            <field name="brand_title_normal">Unearthing</field>
+            <field name="brand_title_highlight">The Extraordinary.</field>
+            <field name="brand_description">One of a Kind unveils unique masterpieces of nature. We source the most exceptional minerals, gems, and fossils from around the world.</field>
+            <field name="brand_cta_text">Read our story</field>
+            <field name="brand_cta_href">/the-brand</field>
+            <field name="brand_image_src">/producto3.png</field>
+            <field name="brand_image_alt">The Brand Philosophy</field>
+            <field name="brand_show_badge">True</field>
+        </record>
+    </data>
+</odoo>
