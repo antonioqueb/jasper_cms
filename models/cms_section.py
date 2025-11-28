@@ -121,12 +121,22 @@ class CmsSectionContent(models.Model):
             }
             if self.cta_sub_text:
                 result['cta']['sub_text'] = self.cta_sub_text
-                
-        if self.image or self.image_src:
+        
+        # --- CORRECCIÓN AQUÍ ---
+        # Determinamos la fuente de la imagen
+        img_src = self.image_src
+        
+        # Si no hay URL manual, pero SI hay imagen binaria subida, generamos la ruta de Odoo
+        if not img_src and self.image:
+            # Esta es la ruta estándar para obtener imágenes binarias en Odoo
+            img_src = f"/web/image?model={self._name}&id={self.id}&field=image"
+            
+        if img_src:
             result['image'] = {
-                'src': self.image_src or '',
+                'src': img_src,
                 'alt': self.image_alt or '',
                 'show_badge': self.show_badge,
             }
+        # -----------------------
             
         return result

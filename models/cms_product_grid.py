@@ -75,6 +75,18 @@ class CmsProductGridItem(models.Model):
         """Return item as dictionary for JSON API"""
         self.ensure_one()
         
+        # 1. Determinar URL de imagen
+        img_src = self.manual_image_src
+        
+        # Si no hay URL texto, pero hay imagen binaria subida en el ITEM MANUAL
+        if not img_src and self.manual_image:
+            img_src = f"/web/image?model={self._name}&id={self.id}&field=manual_image"
+            
+        # Si sigue sin haber imagen y es un producto vinculado, usar la del producto
+        if not img_src and self.product_id:
+            img_src = f"/web/image/product.template/{self.product_id.id}/image_1024"
+
+        # 2. Construir respuesta
         if self.product_id:
             return {
                 'id': self.product_id.id,
@@ -82,7 +94,7 @@ class CmsProductGridItem(models.Model):
                 'slug': self.product_id.website_slug or self.manual_slug or '',
                 'price': self.product_id.list_price,
                 'currency': self.manual_currency,
-                'image': self.manual_image_src or f'/web/image/product.template/{self.product_id.id}/image_1024',
+                'image': img_src or '', # Usamos la variable calculada
                 'category': self.product_id.categ_id.name if self.product_id.categ_id else '',
                 'is_new': self.is_new,
                 'is_featured': self.is_featured,
@@ -94,7 +106,7 @@ class CmsProductGridItem(models.Model):
                 'slug': self.manual_slug or '',
                 'price': self.manual_price,
                 'currency': self.manual_currency,
-                'image': self.manual_image_src or '',
+                'image': img_src or '', # Usamos la variable calculada
                 'category': self.manual_category or '',
                 'is_new': self.is_new,
                 'is_featured': self.is_featured,
