@@ -1,30 +1,24 @@
 {
-    'name': 'HOME Content Manager',
-    'version': '19.0.3.0.0',
-    'category': 'Website',
-    'summary': 'Manage Home Page content and SEO',
+    'name': 'The Brand CMS API',
+    'version': '1.0',
+    'category': 'Website/CMS',
+    'summary': 'Gestor de contenido headless para The Brand Page',
     'description': """
-        HOME Content Manager
-        ====================
-        a
-        Simplified manager specifically for the Home Page.
-        - SEO Settings
-        - Hero Section
-        - Feature Section
-        - Brand Story Section
+        Módulo diseñado para gestionar el contenido de la página 'The Brand'.
+        - API Pública HTTP (REST-like)
+        - Gestión de Historias/Capítulos
+        - Soporte directo para subida de Imágenes
+        - Estructura visual basada en pestañas
     """,
-    'author': 'Alphaqueb Consulting',
-    'website': 'https://alphaqueb.com',
-    'license': 'LGPL-3',
-    'depends': ['base'],
+    'author': 'Alphaque Consulting',
+    'website': 'https://alphaque.com',
+    'depends': ['base'], 
     'data': [
         'security/ir.model.access.csv',
-        'views/home_views.xml',
-        'views/menus.xml',
-        'data/home_data.xml',
+        'data/cms_data.xml',   # <--- MOVIDO ANTES DE LAS VISTAS
+        'views/cms_views.xml',
     ],
-    'assets': {},
     'installable': True,
     'application': True,
-    'auto_install': False,
+    'license': 'LGPL-3',
 }
