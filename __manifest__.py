@@ -6,7 +6,7 @@
     'description': """
         HOME Content Manager
         ====================
-        
+        a
         Simplified manager specifically for the Home Page.
         - SEO Settings
         - Hero Section
